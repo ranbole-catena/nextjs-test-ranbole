@@ -10,7 +10,7 @@ export default async function Page({ params }) {
 }
 
 async function getData(userId) {
-    const res = await fetch(`http://localhost:3000/api/user/${userId}`);
+    const res = await fetch(`${process.env.API_EP}/api/user/${userId}`);
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
