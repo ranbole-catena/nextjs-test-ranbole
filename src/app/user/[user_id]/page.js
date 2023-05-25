@@ -4,7 +4,7 @@ export default async function Page({ params }) {
     const data = await getData(params.user_id);
     return <>
         <p className="p-5">
-            <h1 className="text-xl mb-5">User info</h1>
+            <h1 className="text-xl mb-5">User Info</h1>
             Name: {data.user.name} <br />
             Email: {data.user.email} <br /><br />
             <Link className="text-orange-300" href={'/user'}>Back to user dir</Link>
