@@ -2,7 +2,6 @@ import Link from "next/link";
 
 export default async function Page({ params }) {
     const data = await getData(params.slug);
-    //console.log('data', data)
     return <>
         <p>Post, user name from API is: {data.user.name}</p>
         <Link href={'/blog'}>link to blog dir</Link>
