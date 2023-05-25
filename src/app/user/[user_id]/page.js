@@ -1,10 +1,15 @@
 import Link from "next/link";
 
 export default async function Page({ params }) {
-    const data = await getData(params.slug);
+    const data = await getData(params.user_id);
     return <>
-        <p>Post, user name from API is: {data.user.name}</p>
-        <Link href={'/blog'}>link to blog dir</Link>
+        <p className="p-5">
+            <h1 className="text-xl mb-5">User info</h1>
+            Name: {data.user.name} <br />
+            Email: {data.user.email} <br /><br />
+            <Link className="text-orange-300" href={'/user'}>Back to user dir</Link>
+        </p>
+
     </>
 }
 
