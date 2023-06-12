@@ -6,3 +6,5 @@ export default function handler(request, response) {
         env: process.env.MY_SECRET,
     });
 }
+
+export const runtime = 'edge';
