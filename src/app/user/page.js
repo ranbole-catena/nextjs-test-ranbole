@@ -2,8 +2,7 @@
 import Link from "next/link";
 
 export default async function Page() {
-    //const users = await getData();
-    const users = [];
+    const users = await getData();
 
     return (
         <div className="p-5">
@@ -36,6 +35,7 @@ export default async function Page() {
     )
 }
 
+// this happends on the server
 async function getData() {
     const res = await fetch(`${process.env.API_EP}/api/users`);
     // The return value is *not* serialized

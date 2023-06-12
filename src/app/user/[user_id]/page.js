@@ -3,8 +3,7 @@ import Link from "next/link";
 export const runtime = 'edge';
 
 export default async function Page({ params }) {
-    //const data = await getData(params.user_id);
-    const data = {};
+    const data = await getData(params.user_id);
     return <>
         <p className="p-5">
             <h1 className="text-xl mb-5">User Info</h1>
