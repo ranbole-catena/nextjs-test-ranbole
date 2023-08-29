@@ -35,7 +35,7 @@ export default async function Page() {
 }
 
 async function getData() {
-    const res = await fetch(`${process.env.API_EP}/api/users`);
+    //const res = await fetch(`${process.env.API_EP}/api/users`);
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
