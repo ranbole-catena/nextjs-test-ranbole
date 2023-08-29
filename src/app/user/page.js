@@ -2,7 +2,8 @@
 import Link from "next/link";
 
 export default async function Page() {
-    const users = await getData();
+    //const users = await getData();
+    const users = [];
     return (
         <div className="p-5">
             <h1 className="text-xl mb-5">This is a user directory page</h1>
@@ -35,7 +36,8 @@ export default async function Page() {
 }
 
 async function getData() {
-    //const res = await fetch(`${process.env.API_EP}/api/users`);
+
+    const res = await fetch(`${process.env.API_EP}/api/users`);
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
