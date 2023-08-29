@@ -11,6 +11,9 @@ export default function Home() {
       <div>
         <Link href={`/user`} className="text-orange-300 text-4xl">View Users</Link>
       </div>
+      <div>
+        One
+      </div>
     </main>
   )
 }
