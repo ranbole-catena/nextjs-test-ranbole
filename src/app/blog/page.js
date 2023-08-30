@@ -2,9 +2,10 @@
 import Link from "next/link";
 
 export default async function Page() {
-    const blogs = await getData();
+    //const blogs = await getData();
     // console.log('blogs', blogs)
     // com
+    const blogs = [];
     return (
         <div className="p-5">
             <h1 className="text-xl mb-5">This is a user directory page</h1>
