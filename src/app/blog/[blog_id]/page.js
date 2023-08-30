@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export default async function Page({ params }) {
-    //const data = await getData(params.blog_id);
-    const data = {};
+    const data = await getData(params.blog_id);
+    //const data = {};
     console.log('data', data);
     return (
         <div className="p-5">
