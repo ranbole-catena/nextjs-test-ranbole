@@ -24,6 +24,7 @@ const BlogIndex = dynamic(() => {
 export default async function Page() {
     //console.log('env', process.env.API_EP);
     const blogs = await getData();
+    console.log('blogs', blogs);
     return (
         <BlogIndex blogs={blogs} />
     )
@@ -62,6 +63,7 @@ export default async function Page() {
 async function getData() {
 
     const res = await fetch(`${process.env.API_EP}/api/blogs`);
+    console.log('res', res);
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
