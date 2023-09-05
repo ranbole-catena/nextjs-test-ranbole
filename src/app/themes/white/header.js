@@ -1,16 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <nav className="fixed sticky top-0 z-50 z-50 w-full bg-white">
       <div className="container mx-auto grid grid-cols-6 items-center gap-4 py-3">
         <div>
-          <Image
-            src="https://www.playusa.com/wp-content/uploads/2016/11/playusa2x.png"
-            width={150}
-            height={50}
-            alt="header_logo"
-          />
+          <Link href="/">
+            <Image
+              src="https://www.playusa.com/wp-content/uploads/2016/11/playusa2x.png"
+              width={150}
+              height={50}
+              alt="header_logo"
+            />
+          </Link>
         </div>
         <div className="col-span-5">
           <ul id="news-menu" className="flex items-center">
