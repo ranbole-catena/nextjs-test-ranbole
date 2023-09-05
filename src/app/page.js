@@ -21,6 +21,11 @@ const HomePage = dynamic(
   },
 );
 
+export const metadata = {
+  title: "Home page blog",
+  description: "home page blog dess",
+};
+
 export default async function Home() {
   const posts = await getData();
   console.log("posts", posts);

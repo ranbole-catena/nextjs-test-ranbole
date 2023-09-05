@@ -18,8 +18,11 @@ const NewsItem = ({ post }) => {
       <div>
         <Image src={post.img} width={80} height={80} alt="image" />
       </div>
+
       <div className="col-span-3">
-        <h4 className="font-oswald">{post.title}</h4>
+        <Link href="blog/1" className="pointer">
+          <h4 className="font-oswald">{post.title}</h4>
+        </Link>
         <div className="flex items-center text-base text-gray-500 ">
           <CalendarDaysIcon className="mr-1 h-6 w-6 text-gray-500" />
           <div>{post.date}</div>
@@ -39,7 +42,7 @@ export default function HomePage({ posts }) {
           height={250}
           alt="Picture of the author"
         />
-        <div className="z-50 text-white">
+        <div className="z-30 text-white">
           <h1 className="font-oswald text-7xl shadow-gray-500 text-shadow-lg">
             USA Online Gambling
           </h1>
@@ -49,7 +52,7 @@ export default function HomePage({ posts }) {
           </div>
         </div>
       </header>
-      <main className="xl container mx-auto mt-10 text-center">
+      <main className="container mx-auto mt-10">
         <div>
           <p className="mb-4 text-lg">
             Welcome to PlayUSA! Legal gambling is exploding across the country,
