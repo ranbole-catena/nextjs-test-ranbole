@@ -34,6 +34,23 @@ const Header = dynamic(
   },
 );
 
+const Footer = dynamic(
+  () => {
+    const theme = process.env.THEME;
+    console.log("path");
+    if (theme == "black") {
+      return import(`./themes/black/footer`);
+    } else if (theme == "white") {
+      return import(`./themes/white/footer`);
+    } else {
+      return import(`./themes/black/footer`);
+    }
+  },
+  {
+    loading: () => <p>Loading...</p>,
+  },
+);
+
 export default function RootLayout({
   children,
 }: {
@@ -44,6 +61,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${oswald.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

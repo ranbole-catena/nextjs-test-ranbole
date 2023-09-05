@@ -25,15 +25,24 @@ export default async function Page({ params }) {
   const news = [
     {
       img: "https://www.playusa.com/wp-content/uploads/2023/09/Exterior-View-of-New-York-New-York-hotel-casino-In-Las-Vegas-80x80.jpg",
+      img_large:
+        "https://www.playusa.com/wp-content/uploads/2023/09/Exterior-View-of-New-York-New-York-hotel-casino-In-Las-Vegas-300x180.jpg",
       title: "Las Vegas News, Rumors, And Shows In September 2023",
+      date: "September 1, 2023",
     },
     {
       img: "https://www.playusa.com/wp-content/uploads/2023/09/Ohio-Casino-Sports-Gambling-Revenue-Increases-in-July-150x150.jpg",
+      img_large:
+        "https://www.playusa.com/wp-content/uploads/2023/09/Ohio-Casino-Sports-Gambling-Revenue-Increases-in-July-300x180.jpg",
       title: "Ohio Casino Revenue Led By Hollywood Columbus Casino In July",
+      date: "September 1, 2023",
     },
     {
       img: "https://www.playusa.com/wp-content/uploads/2023/09/Broken-Record-With-Cash-Background-150x150.jpg",
+      img_large:
+        "https://www.playusa.com/wp-content/uploads/2023/09/Broken-Record-With-Cash-Background-300x180.jpg",
       title: "Virginia Lottery Sees Record Fiscal Year 2023 Sales And Profits",
+      date: "September 1, 2023",
     },
   ];
 
@@ -74,7 +83,11 @@ async function getData(userId) {
     title:
       "Tentative Kentucky Sports Wagering Catalog Has Some Glaring Omissions",
     tags: ["Kentucky", "Legislation and Regulation", "News"],
-    auhtor: "Derek Helling",
+    author: {
+      name: "Derek Helling",
+      img: "https://www.playusa.com/wp-content/uploads/2020/03/4eeb614417c557bad75cbc00fcfff3f9.jpeg",
+      bio: "Derek Helling is the assistant managing editor of PlayUSA. Helling focuses on breaking news, including finance, regulation, and technology in the gaming industry. Helling completed his journalism degree at the University of Iowa and resides in Chicago",
+    },
     date: "August 31, 2023",
     banner_img:
       "https://www.playusa.com/wp-content/uploads/2023/08/racing-louisville-soccer-match-nwsl-1024x445.jpeg",
