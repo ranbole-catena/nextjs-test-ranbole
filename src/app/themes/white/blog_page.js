@@ -14,6 +14,14 @@ export default function BlogPage({ data, news }) {
           </h2>
         );
       }
+      if (domNode.name === "a") {
+        return (
+          <Link href="/" className={`${LinkStyle}3`}>
+            {domToReact(domNode.children)}
+          </Link>
+          //   <a className={`${LinkStyle}3`}>{domToReact(domNode.children)}</a>
+        );
+      }
     },
   });
 
