@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@planetscale/database": "^1.11.0",
     "@types/node": "20.2.3",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
@@ -18,7 +19,6 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "html-react-parser": "^4.2.2",
-    "mysql2": "^3.3.2",
     "next": "13.4.3",
     "postcss": "8.4.23",
     "react": "18.2.0",

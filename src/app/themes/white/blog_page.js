@@ -19,7 +19,6 @@ export default function BlogPage({ data, news }) {
           <Link href="/" className={`${LinkStyle}3`}>
             {domToReact(domNode.children)}
           </Link>
-          //   <a className={`${LinkStyle}3`}>{domToReact(domNode.children)}</a>
         );
       }
     },

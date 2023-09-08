@@ -22,19 +22,54 @@ const HomePage = dynamic(
 );
 
 export const metadata = {
-  title: "Home page blog",
+  title: "Online Gambling USA 2023 - Best Legal Gambling Sites",
   description: "home page blog dess",
+  openGraph: {
+    images: ["/some-specific-page-image.jpg"],
+    locale: "en_US",
+  },
+  viewport: "width=device-width, initial-scale=1",
+  charset: "UTF-8",
+  twitter: {
+    site: "Play USA",
+    creator: "admin",
+    title: "Legal US Online Gambling",
+    description:
+      "USA Online Gambling We only list legal gambling sites that are in compliance with state gambling laws Welcome to PlayUSA! Legal gambling is exploding across the country, and it can be difficult to manage all the opportunities happening near you. This site provides you with the latest news, reviews and information on states that permit [&hellip;]",
+  },
 };
+
+// <meta name="twitter:card" content="summary_large_image">
+// 		<meta name="twitter:site" content="Play USA">
+// 		<meta name="twitter:creator" content="admin">
+// 		<meta name="twitter:title" content="Legal US Online Gambling">
+// 		<meta name="twitter:description" content="USA Online Gambling We only list legal gambling sites that are in compliance with state gambling laws Welcome to PlayUSA! Legal gambling is exploding across the country, and it can be difficult to manage all the opportunities happening near you. This site provides you with the latest news, reviews and information on states that permit [&hellip;]">
+// 		<meta name="twitter:image" content="https://www.playusa.com/wp-includes/images/media/default.png"></meta>
+
+// export async function generateMetadata({ params, searchParams }, parent) {
+//   // read route params
+//   const id = params.id;
+
+//   // fetch data
+//   //const product = await fetch(`https://.../${id}`).then((res) => res.json())
+
+//   // optionally access and extend (rather than replace) parent metadata
+//   const previousImages = (await parent).openGraph?.images || [];
+
+//   return {
+//     title: "Online Gambling USA 2023 - Best Legal Gambling Sites",
+//     description: "home page blog dess",
+//     openGraph: {
+//       images: ["/some-specific-page-image.jpg", ...previousImages],
+//     },
+//   };
+// }
 
 export default async function Home() {
   const posts = await getData();
   console.log("posts", posts);
   return (
     <>
-      <Head>
-        <title>Title page</title>
-        <meta property="og:title" content="My page title" key="title" />
-      </Head>
       <HomePage posts={posts} />
     </>
   );

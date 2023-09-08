@@ -66,8 +66,7 @@ async function getData(userId) {
     "<p>If you planned on visiting a physical sportsbook in Kentucky on Sept. 7 and placing some legal wagers on Louisville City FC or Racing Louisville matches, you might be disappointed. A preliminary list of the events that licensed sportsbooks in the state can accept could exclude those fixtures.</p>";
   content +=
     "<p>The catalog is still pending final approval from Kentucky regulators and even if approved as currently composed, it probably will see many additions in the future. In addition, the current omissions are somewhat open to interpretation and the catalog boasts a strong menu for bettors in one aspect.</p>";
-  content +=
-    "<h2 class='font-oswald'>Kentucky council makes catalog recommendations</h2>";
+  content += "<h2>Kentucky council makes catalog recommendations</h2>";
   content +=
     "<p>On Thursday morning, the newly created Kentucky Sports Wagering Advisory Council (KSWAC) held its first meeting online. Its only matter of business was to recommend an initial catalog of eligible events for the state’s physical sportsbooks.</p>";
 
