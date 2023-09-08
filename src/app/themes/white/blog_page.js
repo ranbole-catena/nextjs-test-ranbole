@@ -16,7 +16,7 @@ export default function BlogPage({ data, news }) {
       }
       if (domNode.name === "a") {
         return (
-          <Link href="/" className={`${LinkStyle}3`}>
+          <Link href={`/${domNode.attribs.href}`} className={`${LinkStyle}3`}>
             {domToReact(domNode.children)}
           </Link>
         );
