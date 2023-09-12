@@ -1,7 +1,10 @@
 //https://tailwind-elements.com/docs/standard/components/social-buttons/
 export function Facebook() {
   return (
-    <button className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-500 p-2 font-semibold text-white">
+    <button
+      className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-500 p-2 font-semibold text-white"
+      aria-label="facebook-button"
+    >
       <svg
         className="h-5 w-5 fill-current"
         role="img"
@@ -16,7 +19,10 @@ export function Facebook() {
 
 export function Twitter() {
   return (
-    <button className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-400 p-2 font-semibold text-white">
+    <button
+      className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-400 p-2 font-semibold text-white"
+      aria-label="twitter-button"
+    >
       <svg
         className="h-5 w-5 fill-current"
         role="img"
@@ -31,7 +37,10 @@ export function Twitter() {
 
 export function LinkedIn() {
   return (
-    <button className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-600 p-2 font-semibold text-white">
+    <button
+      className="mr-2 inline-flex items-center space-x-2 rounded bg-blue-600 p-2 font-semibold text-white"
+      aria-label="linkedin-button"
+    >
       <svg
         className="h-5 w-5 fill-current"
         role="img"
@@ -48,7 +57,10 @@ export function LinkedIn() {
 
 export function Reddit() {
   return (
-    <button className="mr-2 inline-flex items-center space-x-2 rounded bg-red-500 p-2 font-semibold text-white">
+    <button
+      className="mr-2 inline-flex items-center space-x-2 rounded bg-red-500 p-2 font-semibold text-white"
+      aria-label="reddit-button"
+    >
       <svg
         className="h-5 w-5 fill-current"
         role="img"
