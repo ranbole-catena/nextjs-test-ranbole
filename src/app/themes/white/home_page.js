@@ -41,6 +41,7 @@ export default function HomePage({ posts }) {
           width={1500}
           height={250}
           alt="Picture of the author"
+          priority
         />
         <div className="z-30 text-white">
           <h1 className="font-oswald text-7xl shadow-gray-500 text-shadow-lg">
