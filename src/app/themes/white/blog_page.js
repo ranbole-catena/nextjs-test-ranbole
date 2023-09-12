@@ -117,7 +117,7 @@ export default function BlogPage({ data, news }) {
                 <span className="block tracking-widest text-gray-500">
                   WRITTEN BY
                 </span>
-                <h6 className="font-oswald text-2xl">{data.author.name}</h6>
+                <h2 className="font-oswald text-2xl">{data.author.name}</h2>
                 <p className="my-5 text-lg text-gray-500">{data.author.bio}</p>
                 <span className="block text-xs text-gray-500">
                   View all posts by Derek Helling
@@ -138,7 +138,7 @@ export default function BlogPage({ data, news }) {
                     <Image src={n.img} width={90} height={90} alt={n.title} />
                   </div>
                   <div className="col-span-2">
-                    <h4 className="font-oswald text-red-700">{n.title}</h4>
+                    <h3 className="font-oswald text-red-700">{n.title}</h4>
                   </div>
                 </div>
               );
