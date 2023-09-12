@@ -21,7 +21,7 @@ const NewsItem = ({ post }) => {
 
       <div className="col-span-3">
         <Link href="blog/1" className="pointer">
-          <h4 className="font-oswald">{post.title}</h4>
+          <h2 className="font-oswald">{post.title}</h2>
         </Link>
         <div className="flex items-center text-base text-gray-500 ">
           <CalendarDaysIcon className="mr-1 h-6 w-6 text-gray-500" />

@@ -138,7 +138,7 @@ export default function BlogPage({ data, news }) {
                     <Image src={n.img} width={90} height={90} alt={n.title} />
                   </div>
                   <div className="col-span-2">
-                    <h3 className="font-oswald text-red-700">{n.title}</h4>
+                    <h3 className="font-oswald text-red-700">{n.title}</h3>
                   </div>
                 </div>
               );
