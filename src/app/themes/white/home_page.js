@@ -36,7 +36,7 @@ export default function HomePage({ posts }) {
     <>
       <header className="flex h-60 items-center justify-center bg-black text-center">
         <Image
-          className="absolute z-0 h-60 object-cover"
+          className="absolute z-0 h-60 w-screen object-cover"
           src="https://www.playusa.com/wp-content/uploads/2019/01/vegas-hero-1024x393.jpg"
           width={1500}
           height={250}

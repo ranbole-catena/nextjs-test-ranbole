@@ -83,28 +83,28 @@ export default function Footer() {
             src="https://www.playusa.com/wp-content/uploads/2016/11/playusa2x.png"
             width={300}
             height={100}
-            className="mx-auto"
+            className="mx-auto w-auto"
             alt="footer_logo"
           />
           {/* search */}
-          <div class="relative mx-auto my-5 pt-2 text-gray-600">
+          <div className="relative mx-auto my-5 pt-2 text-gray-600">
             <input
-              class="h-10 w-full border border-gray-300 bg-white px-5 pr-16 font-oswald text-sm focus:outline-none"
+              className="h-10 w-full border border-gray-300 bg-white px-5 pr-16 font-oswald text-sm focus:outline-none"
               type="search"
               name="search"
               placeholder="Search"
             />
-            <button type="submit" class="absolute right-0 top-0 mr-4 mt-5">
+            <button type="submit" className="absolute right-0 top-0 mr-4 mt-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                class="h-5 w-5"
+                className="h-5 w-5"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             </button>
