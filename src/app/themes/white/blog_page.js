@@ -57,6 +57,7 @@ export default function BlogPage({ data, news }) {
               sizes="100vw"
               alt="image"
               className="h-auto w-full"
+              priority
             />
           </div>
           <div className="my-5">
