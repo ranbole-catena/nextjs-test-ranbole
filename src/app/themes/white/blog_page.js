@@ -114,12 +114,12 @@ export default function BlogPage({ data, news }) {
                 />
               </div>
               <div className="col-span-5">
-                <span className="block tracking-widest text-gray-400">
+                <span className="block tracking-widest text-gray-500">
                   WRITTEN BY
                 </span>
                 <h6 className="font-oswald text-2xl">{data.author.name}</h6>
                 <p className="my-5 text-lg text-gray-500">{data.author.bio}</p>
-                <span className="block text-xs text-gray-400">
+                <span className="block text-xs text-gray-500">
                   View all posts by Derek Helling
                 </span>
               </div>
