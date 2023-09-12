@@ -83,12 +83,12 @@ export default function BlogPage({ data, news }) {
                   <div>
                     <div className="h-44">
                       <Image
-                        width={0}
-                        height={0}
-                        sizes="100vw"
+                        width={310}
+                        height={175}
+                        // sizes="100vw"
                         alt="image"
                         className="h-44 w-full"
-                        src={n.img}
+                        src={n.img_large}
                       />
                     </div>
                     <div className="mb-6 font-oswald text-lg text-red-700">

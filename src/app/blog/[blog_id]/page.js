@@ -71,7 +71,7 @@ async function getData(userId) {
     "<p>On Thursday morning, the newly created Kentucky Sports Wagering Advisory Council (KSWAC) held its first meeting online. Its only matter of business was to recommend an initial catalog of eligible events for the state’s physical sportsbooks.</p>";
 
   content +=
-    "<p>Those licensees should begin to take bets as soon as Sept. 7 across the state. For instance, <a href='abc'>Churchill Downs has already confirmed its plans</a> to do so on that date at six locations across Kentucky. In order to facilitate that legal sports betting activity, a catalog of eligible events is necessary.</p>";
+    "<p>Those licensees should begin to take bets as soon as Sept. 7 across the state. For instance, <a href='/'>Churchill Downs has already confirmed its plans</a> to do so on that date at six locations across Kentucky. In order to facilitate that legal sports betting activity, a catalog of eligible events is necessary.</p>";
 
   content +=
     "<p>The KSWAC is just as the name suggests, an advisory body only. The real power to regulate sports wagering and most other forms of gaming in Kentucky still lies with the Kentucky Horse Racing Commission (KHRC). Thus, the KHRC still needs to approve the KSWAC’s recommendations between now and Sept. 7.</p>";
