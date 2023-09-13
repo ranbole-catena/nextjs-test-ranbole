@@ -31,14 +31,16 @@ export default function BlogPage({ data, news }) {
           <h1 className="mb-8 font-oswald text-3xl">{data.title}</h1>
 
           <div className="flex items-center">
-            {data.tags.map((t, i) => {
+            {data.categories.map((c, i) => {
               return (
-                <div
-                  key={i}
-                  className="font-sm mr-2 rounded-sm bg-red-700 px-2 text-xs text-white"
-                >
-                  {t}
-                </div>
+                <Link href={`/category/${c.slug}`}>
+                  <div
+                    key={i}
+                    className="font-sm mr-2 rounded-sm bg-red-700 px-2 text-xs text-white"
+                  >
+                    {c.name}
+                  </div>
+                </Link>
               );
             })}
           </div>

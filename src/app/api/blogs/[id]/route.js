@@ -16,11 +16,11 @@ export async function GET(request, { params }) {
 
     const conn = await connect(config);
 
-    const results = await conn.execute("SELECT * FROM users where ID = ?", [
+    const results = await conn.execute("SELECT * FROM posts where ID = ?", [
       id,
     ]);
     data = results.rows[0] ?? {};
-    await kv.set(kv_key, data);
+    await kv.set(kv_key, data, { ex: 3600, nx: true });
   }
 
   // const res = await fetch('https://data.mongodb-api.com/...', {
