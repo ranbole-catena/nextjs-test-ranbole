@@ -7,7 +7,7 @@ import { parseContent } from "./helper";
 
 export default function CategoryPage({ data, news }) {
   return (
-    <main className="container mx-auto mt-6">
+    <main className="container mx-auto pt-6">
       <div className="mx-auto grid grid-cols-4 gap-8">
         <div className="col-span-3">
           <h1 className="mb-8 font-oswald text-3xl">Nevada</h1>
@@ -50,7 +50,7 @@ export default function CategoryPage({ data, news }) {
         <div className="pl-2">
           <div>
             <h2 className={`${H2Style} mb-10`}>Latest News</h2>
-            {/* {news.map((n, i) => {
+            {news.map((n, i) => {
               return (
                 <div key={i} className="mb-5 grid grid-cols-3 gap-3">
                   <div>
@@ -61,7 +61,7 @@ export default function CategoryPage({ data, news }) {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

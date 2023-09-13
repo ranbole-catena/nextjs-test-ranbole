@@ -25,7 +25,7 @@ export default function BlogPage({ data, news }) {
   });
 
   return (
-    <main className="container mx-auto mt-6">
+    <main className="container mx-auto pt-6">
       <div className="mx-auto grid grid-cols-4 gap-8">
         <div className="col-span-3">
           <h1 className="mb-8 font-oswald text-3xl">{data.title}</h1>
