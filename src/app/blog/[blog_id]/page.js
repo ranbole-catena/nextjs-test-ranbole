@@ -69,6 +69,7 @@ async function getData(id) {
   const kv_key = `blog_${id}`;
   let data = await kv.get(kv_key);
 
+  console.log("database_url", process.env["DATABASE_URL"]);
   if (true) {
     const config = {
       url: process.env["DATABASE_URL"],
@@ -96,6 +97,8 @@ async function getData(id) {
       slug: categoriy_slug_arr[i],
     });
   });
+
+  console.log("");
 
   // let content =
   //   "<p>If you planned on visiting a physical sportsbook in Kentucky on Sept. 7 and placing some legal wagers on Louisville City FC or Racing Louisville matches, you might be disappointed. A preliminary list of the events that licensed sportsbooks in the state can accept could exclude those fixtures.</p>";
