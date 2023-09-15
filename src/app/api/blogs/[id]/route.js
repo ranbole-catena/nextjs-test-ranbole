@@ -16,9 +16,12 @@ export async function GET(request, { params }) {
 
     const conn = await connect(config);
 
-    const results = await conn.execute("SELECT * FROM posts where ID = ?", [
-      id,
-    ]);
+    const results = await conn.execute(
+      "SELECT p.*, GROUP_CONCAT ( c.name ) as 'categories', GROUP_CONCAT ( c.slug ) as 'category_slugs', u.name as 'author_name', u.email as 'author_email' FROM posts p LEFT JOIN category_post cp on p.id = cp.post_id LEFT JOIN categories c ON cp.category_id = c.id LEFT JOIN users u on p.author_id = u.id where p.id = ? group by p.id",
+      [id],
+    );
+
+    console.log("results", results);
     data = results.rows[0] ?? {};
     await kv.set(kv_key, data, { ex: 3600, nx: true });
   }
