@@ -17,19 +17,24 @@ export default function CategoryPage({ data, news }) {
               return (
                 <div className="grid grid-cols-3 gap-5 py-3">
                   <div>
-                    <Image
-                      src="https://www.playusa.com/wp-content/uploads/2023/09/Circa-Survivor-Contest-Update-380x200.jpg"
-                      width={300}
-                      height={158}
-                      alt="post-img"
-                    />
+                    <Link href={`/blog/${p.id}`}>
+                      <Image
+                        src="https://www.playusa.com/wp-content/uploads/2023/09/Circa-Survivor-Contest-Update-380x200.jpg"
+                        width={300}
+                        height={158}
+                        alt="post-img"
+                      />
+                    </Link>
                   </div>
                   <div className="col-span-2 ">
-                    <h3 className={`${H2Style} pb-3 text-red-700`}>
-                      {p.title}
-                    </h3>
+                    <Link href={`/blog/${p.id}`}>
+                      <h3 className={`${H2Style} pb-3 text-red-700`}>
+                        {p.title}
+                      </h3>
+                    </Link>
                     {parseContent(p.body)}
                   </div>
+
                   <div className="col-span-3 flex items-center text-sm">
                     <span>Posted on: {p.published_on}</span>
                     <span className="px-1">|</span>
