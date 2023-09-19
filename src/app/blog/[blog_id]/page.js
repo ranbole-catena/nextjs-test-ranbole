@@ -20,9 +20,7 @@ const BlogPage = dynamic(
 );
 
 export default async function Page({ params }) {
-  const data = await getData(params.blog_id);
-  //const data = {};
-  console.log("data", data);
+  const data = await getDataFromCacheOrDB(params.blog_id);
 
   const news = [
     {
@@ -52,40 +50,33 @@ export default async function Page({ params }) {
 }
 
 // SSR
-async function getData(id) {
-  console.log("getdatalol");
-
-  //const res = await fetch(`${process.env.API_EP}/api/blogs/${userId}`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-  // Recommendation: handle errors
-  // if (!res.ok) {
-  //   // This will activate the closest `error.js` Error Boundary
-  //   throw new Error("Failed to fetch data");
-  // }
-
-  // return res.json();
-
+async function getDataFromCacheOrDB(id) {
   const kv_key = `blog_${id}`;
-  let data = await kv.get(kv_key);
+  let resJson = await kv.get(kv_key);
 
-  console.log("database_url", process.env["DATABASE_URL"]);
-  if (true) {
-    const config = {
-      url: process.env["DATABASE_URL"],
-    };
-
-    const conn = await connect(config);
-
-    const results = await conn.execute(
-      "SELECT p.*, GROUP_CONCAT ( c.name ) as 'categories', GROUP_CONCAT ( c.slug ) as 'category_slugs', u.name as 'author_name', u.email as 'author_email' FROM posts p LEFT JOIN category_post cp on p.id = cp.post_id LEFT JOIN categories c ON cp.category_id = c.id LEFT JOIN users u on p.author_id = u.id where p.id = ? group by p.id",
-      [id],
-    );
-    data = results.rows[0] ?? {};
-    await kv.set(kv_key, data, { ex: 3600, nx: true });
+  if (!resJson) {
+    //const res = await fetch(`${process.env.API_EP}/api/blogs/${id}`);
+    //resJson = await res.json();
+    resJson = await fetchBlogDataFromDB(id);
+    console.log(">>>resJson", resJson);
+    await kv.set(kv_key, resJson, { ex: 3600, nx: false });
   }
 
-  console.log("blog data", data);
+  return resJson;
+}
+
+async function fetchBlogDataFromDB(id) {
+  const config = {
+    url: process.env["DATABASE_URL"],
+  };
+
+  const conn = await connect(config);
+
+  const results = await conn.execute(
+    "SELECT p.*, GROUP_CONCAT ( c.name ) as 'categories', GROUP_CONCAT ( c.slug ) as 'category_slugs', u.name as 'author_name', u.email as 'author_email' FROM posts p LEFT JOIN category_post cp on p.id = cp.post_id LEFT JOIN categories c ON cp.category_id = c.id LEFT JOIN users u on p.author_id = u.id where p.id = ? group by p.id",
+    [id],
+  );
+  const data = results.rows[0] ?? {};
 
   let categories = [];
   let categories_arr = data.categories.split(",");
@@ -98,24 +89,6 @@ async function getData(id) {
     });
   });
 
-  console.log("");
-
-  // let content =
-  //   "<p>If you planned on visiting a physical sportsbook in Kentucky on Sept. 7 and placing some legal wagers on Louisville City FC or Racing Louisville matches, you might be disappointed. A preliminary list of the events that licensed sportsbooks in the state can accept could exclude those fixtures.</p>";
-  // content +=
-  //   "<p>The catalog is still pending final approval from Kentucky regulators and even if approved as currently composed, it probably will see many additions in the future. In addition, the current omissions are somewhat open to interpretation and the catalog boasts a strong menu for bettors in one aspect.</p>";
-  // content += "<h2>Kentucky council makes catalog recommendations</h2>";
-  // content +=
-  //   "<p>On Thursday morning, the newly created Kentucky Sports Wagering Advisory Council (KSWAC) held its first meeting online. Its only matter of business was to recommend an initial catalog of eligible events for the state’s physical sportsbooks.</p>";
-
-  // content +=
-  //   "<p>Those licensees should begin to take bets as soon as Sept. 7 across the state. For instance, <a href='/'>Churchill Downs has already confirmed its plans</a> to do so on that date at six locations across Kentucky. In order to facilitate that legal sports betting activity, a catalog of eligible events is necessary.</p>";
-
-  // content +=
-  //   "<p>The KSWAC is just as the name suggests, an advisory body only. The real power to regulate sports wagering and most other forms of gaming in Kentucky still lies with the Kentucky Horse Racing Commission (KHRC). Thus, the KHRC still needs to approve the KSWAC’s recommendations between now and Sept. 7.</p>";
-
-  // content +=
-  //   "<p>The initial event catalog is quite robust in some ways. In others, though, it seems to be lacking. To some extent that depends on the reading of the language, too.</p>";
   return {
     title: data.title,
     categories: categories,
